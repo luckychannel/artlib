@@ -3,6 +3,10 @@ LuckyLibraryBundle:
     type:     annotation
     prefix:   /
 
+default:
+    pattern:      /
+    defaults:     { _controller: LuckyLibraryBundle:Default:list, page: 1 }
+
 list:
     pattern:      /book/page/{page}
     defaults:     { _controller: LuckyLibraryBundle:Default:list, page: 1 }
