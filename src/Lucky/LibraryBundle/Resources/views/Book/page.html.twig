@@ -1,0 +1,15 @@
+
+				    {% for book in data['books'] %}
+								<tr class="book">
+						        <td>{{ book.id }}</td>
+						        <td>{{ book.title }}</td>
+								</tr>
+				    {% endfor %}
+				    {% if data['next'] is not defined %}
+				    {% else %}
+				        <tr>
+										<td colspan="2" class="next" rel="{{ data['next'] }}">
+												<span>Page {{ data['next'] }}</span>
+										</td>
+								</tr>
+				    {% endif %}

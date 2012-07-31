@@ -1,3 +1,16 @@
+LuckyLibraryBundle:
+    resource: "@LuckyLibraryBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+list:
+    pattern:      /book/page/{page}
+    defaults:     { _controller: LuckyLibraryBundle:Default:list, page: 1 }
+
+description:
+    pattern:      /book/info/{id}
+    defaults:     { _controller: LuckyLibraryBundle:Default:info, id: 1 }
+
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"

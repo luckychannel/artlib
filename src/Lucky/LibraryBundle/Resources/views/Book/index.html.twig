@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Test Application</title>
+				<link href="{{ asset('bundles/luckylibrary/css/style.css') }}" type="text/css" rel="stylesheet" />
+				<script src="http://code.jquery.com/jquery-latest.js"></script>
+				<script src="{{ asset('bundles/luckylibrary/js/script.js') }}"></script>
+    </head>
+    <body>
+
+				<div id="boxes">
+					<div id="window">
+						<div class="win-inner">
+							<p>
+								<span class="desc-title">Описание</span>
+								<span class="close">Закрыть</span>
+							</p>
+							<div class="text"></div>
+						</div>
+					</div>
+					<div id="mask"></div>
+				</div>
+
+	<div class="page">
+		<div class="semipage-1">
+			<div class="semipage-2">
+        <table id="books" cellpadding="0" cellspacing="0">
+				<thead>
+					<tr>
+						<td>№ п/п</td>
+						<td>Название</td>
+					</tr>
+				</thead>
+				<tbody>
+				    {% for book in data['books'] %}
+								<tr class="book">
+						        <td>{{ book.id }}</td>
+						        <td>{{ book.title }}</td>
+								</tr>
+				    {% endfor %}
+				    {% if data['next'] is not defined %}
+				    {% else %}
+				        <tr>
+										<td colspan="2" rel="{{ data['next'] }}" class="next">
+												<span>Page {{ data['next'] }}</span>
+										</td>
+								</tr>
+				    {% endif %}
+				</tbody>
+        </table>
+			</div>
+		</div>
+	</div>
+
+    </body>
+</html>
